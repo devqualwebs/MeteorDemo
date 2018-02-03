@@ -1,0 +1,38 @@
+<head>
+  <title>AuthDemo</title>
+</head>
+
+<body>
+    {{#if currentUser}}
+        {{> dashboard}}
+    {{else}}
+        {{> registration}}
+        {{> login}}
+    {{/if}}
+</body>
+
+<template name="registration">
+  <!--<input type="submit" value="Register" />-->
+    <input type='checkbox' id='form-switch'>
+    <form id='register-form'>
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="repassword" placeholder="Re Password" required>
+        <button type='submit'>Register</button>
+        <label for='form-switch'>Already Member ? Sign In Now..</label>
+    </form>
+</template>
+
+<template name="login">
+    <form id='login-form'>
+        <input type="text" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type='submit'>Login</button>
+        <label for='form-switch'><span>Register</span></label>
+    </form>
+</template>
+
+<template name="dashboard">
+    <a href="javascript:;" class="logout">Logout</a>
+</template>
